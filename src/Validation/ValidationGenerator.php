@@ -48,7 +48,7 @@ class ValidationGenerator
      */
     public function getStoreRules()
     {
-        return $this->getRules();
+        return $this->required()->getRules();
     }
 
     /**
