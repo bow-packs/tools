@@ -113,6 +113,24 @@ class ValidationGenerator
     }
 
     /**
+     * require all rules except
+     *
+     * @param array $except
+     *
+     * @return $this
+     */
+    public function requiredExcept($except = [])
+    {
+        $rulesRequired = [];
+
+        foreach ($this->rules as $index => $rule)
+            $rulesRequired[$index] = (in_array($index, $except)) ? $rule : $this->append($rule, 'required') ;
+
+        $this->rules = $rulesRequired;
+        return $this;
+    }
+
+    /**
      * set given (param array) or all (param '*') rules as required
      *
      * @param string|array $fill
