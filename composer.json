@@ -6,9 +6,6 @@
     "validation"
   ],
   "license": "MIT",
-  "require": {
-    "illuminate/support": "^5.4"
-  },
   "autoload": {
     "psr-4": {
       "Bow\\Tools\\": "src/"
